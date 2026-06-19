@@ -15,9 +15,10 @@
   transition: opacity 0.6s ease;
 
   background: #c8a860;
-  border: 4px solid #8a6020;
+  border: 5px solid #8a6020;
   box-shadow:
-    inset 0 0 0 2px #e0c070,
+    inset 0 0 0 3px #e0c070,
+    inset 0 0 0 5px #a87e30,
     0 6px 20px rgba(0,0,0,0.5);
 }
 
@@ -86,13 +87,13 @@
   height: auto !important;
 
   position: relative;
-  /* Medium warm brown card body */
-  background: #8b5530 !important;
+  /* Dark brown outer card shell */
+  background: #6a3818 !important;
   color: #f0dca0 !important;
   font-size: 8px;
   line-height: 1.7;
-  padding: 8px 58px 8px 52px !important;
-  margin: 7px 0 !important;
+  padding: 8px 62px 8px 56px !important;
+  margin: 10px 0 !important;
 
   /* Bright green pixel border like the BEAK card */
   border: 4px solid #4a9a2a !important;
@@ -166,18 +167,24 @@
   z-index: 2;
 }
 
-/* ─── Option text ─────────────────────────────────────────────────────── */
+/* ─── Inner text content pane — lighter inset box like the game ──────── */
 .custom .options li .text {
+  display: block;
+  background: #9a6a3a;
+  color: #f5e8b0 !important;
   line-height: 1.7;
-  color: #f0dca0 !important;
+  padding: 6px 8px;
+  border: 2px solid #7a4a20;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 6px;
 }
 
 /* ─── Progress bar ────────────────────────────────────────────────────── */
 .custom .options li .bar {
-  background: #4a2810;
-  height: 6px;
-  margin-top: 8px;
-  border: 2px solid #3a1808;
+  background: #3a1e08;
+  height: 7px;
+  margin-top: 4px;
+  border: 2px solid #5a3010;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
 }
 
@@ -211,21 +218,24 @@
   background: linear-gradient(to right, #d4a820, #fff060);
 }
 
-/* ─── Help bar ────────────────────────────────────────────────────────── */
+/* ─── Help bar — vote prompt strip ───────────────────────────────────── */
 .custom .options li.help {
-  background: #6a3818 !important;
+  background: #8b5530 !important;
   color: #f0d060 !important;
   text-align: center;
   font-size: 7px;
+  letter-spacing: 1px;
   border: 3px solid #4a9a2a !important;
-  box-shadow: none !important;
+  box-shadow:
+    inset 0 0 0 2px #6aba40,
+    inset 0 0 0 4px #3a7a18 !important;
   padding-left: 10px !important;
   padding-right: 10px !important;
   overflow: hidden !important;
   height: 0 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-  margin: 0 !important;
+  margin: 0 0 10px 0 !important;
   transition: height 0.4s, padding 0.4s;
 }
 

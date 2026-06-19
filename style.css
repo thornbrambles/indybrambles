@@ -336,10 +336,11 @@
 .custom .total strong,
 .custom .duration strong {
   color: #f0d060;
-  font-size: 12px;
+  font-size: 10px;
   display: block;
   margin-bottom: 4px;
   text-shadow: 1px 1px 0 #000;
+  word-break: break-word;
 }
 
 .custom.finished .metaInfo,

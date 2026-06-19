@@ -104,8 +104,7 @@
   color: #f0dca0 !important;
   font-size: 8px;
   line-height: 1.5;
-  /* padding-left makes room for number badge; right for procent */
-  padding: 8px 70px 8px 56px !important;
+  padding: 6px 6px 6px 56px !important;
   margin: 10px 0 !important;
 
   border: 4px solid #5aaa2a !important;
@@ -159,7 +158,7 @@
   z-index: 2;
 }
 
-/* ─── Percentage badge ────────────────────────────────────────────────── */
+/* ─── Percentage badge — sits inside parchment at right ──────────────── */
 .custom .options li .procent {
   position: absolute;
   top: 8px;
@@ -170,30 +169,32 @@
   padding: 4px 6px;
   border: 2px solid #3a7a10;
   text-shadow: 1px 1px 0 #000;
-  min-width: 38px;
+  min-width: 40px;
   text-align: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 /* ─── Inner content pane — LIGHT PARCHMENT like the game's text box ───── */
 .custom .options li .text {
   display: block;
-  background: #dcc878;           /* warm light parchment */
-  color: #1a0e00 !important;     /* dark text on light bg */
-  line-height: 1.6;
-  padding: 6px 8px;
-  border: 2px solid #a88030;
+  background: #ead990 !important;  /* bright warm parchment */
+  color: #1a0e00 !important;
+  line-height: 1.7;
+  padding: 7px 52px 7px 8px;       /* right padding makes room for procent */
+  border: 2px solid #b89040;
   box-shadow:
-    inset 0 1px 3px rgba(0,0,0,0.15),
-    inset 0 0 0 1px #e8d890;
-  margin-bottom: 6px;
+    inset 0 0 0 1px #f5e8a8,
+    inset 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 0;
+  min-height: 28px;
 }
 
-/* ─── Progress bar — sits below the parchment box ────────────────────── */
+/* ─── Progress bar — inside the parchment area ───────────────────────── */
 .custom .options li .bar {
-  background: #3a1e08;
+  background: #4a2808;
   height: 7px;
-  border: 2px solid #5a3010;
+  border: 2px solid #7a4820;
+  margin-top: 6px;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
 }
 

@@ -1,7 +1,6 @@
 /*
-  RPG Card Theme for poll.ma.pe
+  RPG Card Theme for poll.ma.pe — Evolution Card style
   Usage: ?customCss=https://thornbrambles.github.io/indybrambles/style.css
-  Please keep the poll.ma.pe credit visible briefly.
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
@@ -9,18 +8,19 @@
 /* ─── Outer container ─────────────────────────────────────────────────── */
 .custom {
   width: 420px;
-  padding: 8px;
+  padding: 6px;
   font-family: 'Press Start 2P', monospace;
   image-rendering: pixelated;
   opacity: 0;
   transition: opacity 0.6s ease;
 
-  /* Warm wooden outer frame */
-  background: #7a4a1e;
-  border: 6px solid #3d2008;
+  /* Dark maroon-red outer frame matching the game UI */
+  background: #5c1a08;
+  border: 5px solid #2a0a02;
   box-shadow:
-    inset 0 0 0 3px #b8722e,
-    0 6px 20px rgba(0,0,0,0.5);
+    inset 0 0 0 2px #9a3010,
+    inset 0 0 0 4px #5c1a08,
+    0 6px 20px rgba(0,0,0,0.6);
 }
 
 .custom.active,
@@ -28,40 +28,42 @@
   opacity: 1 !important;
 }
 
-/* Force content visible regardless of poll state — frame always shows content */
+/* Force content visible */
 .custom .options,
 .custom .metaInfo {
   display: block !important;
   visibility: visible !important;
 }
 
-/* Optional .border div — same style so it doesn't break if present */
+/* .border passthrough if present */
 .custom .border {
-  border: none;
-  background: transparent;
-  padding: 0;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
 }
 
-/* ─── Question card ───────────────────────────────────────────────────── */
+/* ─── Question / title card ───────────────────────────────────────────── */
 .custom .options li.question {
   list-style: none !important;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
-  background: #2a4a70 !important;
-  color: #f0e8cc;
+
+  background: #8a2010 !important;
+  color: #f5d060 !important;
   font-size: 9px;
   line-height: 1.8;
-  padding: 12px 16px;
+  padding: 10px 16px !important;
   white-space: normal;
-  border: 4px solid #5aaaff;
-  margin: 0 0 6px 0;
-  position: relative;
-  letter-spacing: 0.5px;
+  border: 3px solid #f0c030 !important;
+  margin: 0 0 5px 0 !important;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 1px 1px 0 #000;
 }
 
-/* ─── Answer option cards ─────────────────────────────────────────────── */
+/* ─── Option list ─────────────────────────────────────────────────────── */
 .custom .options {
   list-style: none !important;
   margin: 0 !important;
@@ -73,6 +75,7 @@
   height: auto !important;
 }
 
+/* ─── Each answer card ────────────────────────────────────────────────── */
 .custom .options li {
   list-style: none !important;
   display: block !important;
@@ -80,17 +83,21 @@
   opacity: 1 !important;
   overflow: visible !important;
   height: auto !important;
+
   position: relative;
-  background: #e8c878 !important;
-  color: #2a1200 !important;
+  /* Warm golden parchment — matches the card interior in the reference */
+  background: #e8c870 !important;
+  color: #2a1000 !important;
   font-size: 8px;
-  line-height: 1.6;
+  line-height: 1.7;
   padding: 10px 58px 10px 52px !important;
   margin: 5px 0 !important;
-  border: 4px solid #4a8c2a !important;
+  /* Gold border like the card frames */
+  border: 3px solid #c89820 !important;
   box-shadow:
-    inset 0 0 0 2px #d4a84a,
-    inset 0 -3px 0 rgba(0,0,0,0.2);
+    inset 0 0 0 2px #f0d870,
+    inset 0 -3px 0 rgba(0,0,0,0.15),
+    0 2px 4px rgba(0,0,0,0.3);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -102,13 +109,13 @@
   left: 0;
   bottom: 0;
   width: 38px;
-  background: #3a2000;
-  color: #f5c842;
+  background: #5c1a08;
+  color: #f5d060;
   font-size: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 3px solid #6a4010;
+  border-right: 3px solid #9a3010;
   text-shadow: 1px 1px 0 #000;
 }
 
@@ -118,11 +125,11 @@
   top: 50%;
   right: 8px;
   transform: translateY(-50%);
-  background: #3a2000;
-  color: #f5c842;
+  background: #5c1a08;
+  color: #f5d060;
   font-size: 8px;
   padding: 3px 6px;
-  border: 2px solid #6a4010;
+  border: 2px solid #9a3010;
   text-shadow: 1px 1px 0 #000;
   min-width: 32px;
   text-align: center;
@@ -130,72 +137,73 @@
 
 /* ─── Option text ─────────────────────────────────────────────────────── */
 .custom .options li .text {
-  line-height: 1.6;
-  color: #2a1200;
+  line-height: 1.7;
+  color: #2a1000 !important;
 }
 
 /* ─── Progress bar ────────────────────────────────────────────────────── */
 .custom .options li .bar {
-  background: #3a2000;
+  background: #3a1000;
   height: 7px;
   margin-top: 8px;
-  border: 2px solid #6a4010;
+  border: 2px solid #6a2808;
 }
 
 .custom .options li .bar .bar-inner {
-  background: linear-gradient(to right, #3a9a1a, #70e040);
+  background: linear-gradient(to right, #3a9a1a, #78e030);
   height: 100%;
   width: 0;
   transition: width 1s ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
 /* ─── Winner highlight ────────────────────────────────────────────────── */
 .custom.finished .options li,
 .custom.removing .options li {
-  opacity: 0.35;
+  opacity: 0.4 !important;
   transition: all 0.8s;
 }
 
 .custom.finished .options li.highest,
 .custom.removing .options li.highest {
-  opacity: 1;
-  background: #f8f0b0;
-  border-color: #e8c020;
+  opacity: 1 !important;
+  background: #fff8d0 !important;
+  border-color: #f0c030 !important;
   box-shadow:
-    inset 0 0 0 2px #f0d840,
-    0 0 14px rgba(240,200,40,0.5);
+    inset 0 0 0 2px #f8e870,
+    0 0 16px rgba(240,192,48,0.6) !important;
 }
 
 .custom.finished .options li.highest .bar .bar-inner {
-  background: linear-gradient(to right, #e8c020, #fff080);
+  background: linear-gradient(to right, #e8b820, #fff080);
 }
 
-/* ─── Help bar (vote prompt) ──────────────────────────────────────────── */
+/* ─── Help bar ────────────────────────────────────────────────────────── */
 .custom .options li.help {
-  background: #3a2000;
-  color: #f5c842;
+  background: #3a1000 !important;
+  color: #f5d060 !important;
   text-align: center;
   font-size: 7px;
-  border-color: #6a4010;
-  padding-left: 10px;
-  padding-right: 10px;
-  overflow: hidden;
-  height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 0;
+  border-color: #6a2808 !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  overflow: hidden !important;
+  height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin: 0 !important;
   transition: height 0.4s, padding 0.4s;
 }
 
 .custom.active .options li.help {
-  height: 34px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: 34px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
 .custom.finished .options li.help,
 .custom.removing .options li.help {
-  height: 0;
+  height: 0 !important;
 }
 
 .custom .options li.help span {
@@ -206,24 +214,24 @@
 
 /* ─── Meta info (totals & timer) ─────────────────────────────────────── */
 .custom .metaInfo {
-  background: #5a3510;
-  border: 3px solid #3d2008;
+  background: #3a1000;
+  border: 3px solid #6a2808;
   overflow: hidden;
   padding: 4px 6px;
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .custom .total,
 .custom .duration {
-  background: #3a2000;
-  color: #e8c878;
+  background: #5c1a08;
+  color: #e8c870;
   font-size: 7px;
   float: left;
   width: 48%;
   text-align: center;
   padding: 8px 4px;
   margin: 3px 0;
-  border: 2px solid #6a4010;
+  border: 2px solid #9a3010;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -234,7 +242,7 @@
 
 .custom .total strong,
 .custom .duration strong {
-  color: #f5c842;
+  color: #f5d060;
   font-size: 12px;
   display: block;
   margin-bottom: 4px;
@@ -250,14 +258,14 @@
 .custom .credits {
   text-align: center;
   font-size: 6px;
-  color: #e8c878;
+  color: #e8c870;
   height: 22px;
   line-height: 22px;
   clear: both;
   overflow: hidden;
   transition: all 0.8s;
-  background: #3a2000;
-  border-top: 2px solid #6a4010;
+  background: #3a1000;
+  border-top: 2px solid #6a2808;
   letter-spacing: 0.5px;
 }
 

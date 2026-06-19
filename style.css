@@ -194,33 +194,30 @@
 
 .custom .options li .text {
   display: block;
-  background: #dbad6d !important;
+  background: #ead990 !important;
   color: #1a0e00 !important;
-  line-height: 1.7;
-  /* right padding clears the % badge; bottom padding holds the bar */
-  padding: 7px 52px 20px 8px;
-  border: 2px solid #3a7a10;
+  font-size: 9px;
+  line-height: 1.8;
+  padding: 8px 54px 8px 10px;
+  border: 2px solid #b89040;
+  border-bottom: none;
   box-shadow:
-    inset 0 0 0 1px #79a632,
+    inset 0 0 0 1px #f5e8a8,
     inset 0 2px 4px rgba(0,0,0,0.1);
-  border-radius: 8px;
   margin-bottom: 0;
-  min-height: 36px;
-  text-transform: none;            /* match game — not all-caps inside parchment */
+  min-height: 32px;
+  text-transform: none;
 }
 
-/* ─── Progress bar — inside the parchment box at the bottom ─────────── */
+/* ─── Progress bar — attached flush to bottom of parchment ──────────── */
 .custom .options li .bar {
-  background: #4a2808;
-  height: 7px;
-  border: 2px solid #7a4820;
-  border-radius: 8px;
-  margin-top: -16px;   /* pull up into the parchment bottom padding */
-  margin-left: 2px;
-  margin-right: 2px;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
-  position: relative;
-  z-index: 1;
+  background: #c8b060;
+  height: 8px;
+  border: 2px solid #b89040;
+  border-top: none;
+  margin-top: 0;
+  margin-bottom: 4px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .custom .options li .bar .bar-inner {
@@ -259,13 +256,13 @@
 
 /* ─── Help bar — simple warm strip, no heavy card border ─────────────── */
 .custom .options li.help {
-  background: #dbad6d !important;
+  background: #ead990 !important;
   color: #5a2e10 !important;
   text-align: center;
-  font-size: 10px;
-  letter-spacing: 1px;
-  border: 2px solid #5a2e10 !important;
-  border-radius: 8px;
+  font-size: 6px;
+  letter-spacing: 0.5px;
+  border: 2px solid #b89040 !important;
+  border-radius: 4px;
   box-shadow: none !important;
   padding-left: 10px !important;
   padding-right: 10px !important;

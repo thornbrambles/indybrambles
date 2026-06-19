@@ -1,11 +1,11 @@
 /*
-  RPG Card Theme for poll.ma.pe — pixel-art card game style
+  RPG Card Theme for poll.ma.pe — Evolution card palette
   Usage: ?customCss=https://thornbrambles.github.io/indybrambles/style.css
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* ─── Outer container — near-black dark maroon shell ─────────────────── */
+/* ─── Outer panel — warm tan like the game's card panel background ────── */
 .custom {
   width: 420px;
   padding: 10px;
@@ -14,11 +14,11 @@
   opacity: 0;
   transition: opacity 0.6s ease;
 
-  background: #2a0808;
-  border: 4px solid #0e0404;
+  background: #c8a860;
+  border: 4px solid #8a6020;
   box-shadow:
-    inset 0 0 0 2px #5a1010,
-    0 8px 24px rgba(0,0,0,0.8);
+    inset 0 0 0 2px #e0c070,
+    0 6px 20px rgba(0,0,0,0.5);
 }
 
 .custom.active,
@@ -38,29 +38,28 @@
   padding: 0 !important;
 }
 
-/* ─── Question — styled like the "BRANCHING" banner header ───────────── */
+/* ─── Question — orange-red pill banner like "EVOLUTION" ─────────────── */
 .custom .options li.question {
   list-style: none !important;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
 
-  background: #c04010 !important;
-  background: linear-gradient(180deg, #d45020 0%, #a83010 100%) !important;
+  background: linear-gradient(180deg, #d85020 0%, #a83010 100%) !important;
   color: #f5e8b0 !important;
   font-size: 10px;
   line-height: 1.6;
-  padding: 10px 20px !important;
+  padding: 10px 24px !important;
   white-space: normal;
   border: 3px solid #6a1808 !important;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow:
-    inset 0 2px 0 rgba(255,255,255,0.15),
+    inset 0 2px 0 rgba(255,200,100,0.25),
     inset 0 -2px 0 rgba(0,0,0,0.3),
-    0 3px 8px rgba(0,0,0,0.5);
-  margin: 0 0 8px 0 !important;
+    0 3px 8px rgba(0,0,0,0.4);
+  margin: 0 0 10px 0 !important;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-align: center;
   text-shadow: 1px 2px 0 #5a1000;
 }
@@ -78,13 +77,6 @@
 }
 
 /* ─── Each answer card ────────────────────────────────────────────────── */
-/*
-  Layer structure matching the game:
-  1. Dark maroon outer shell  (border)
-  2. Bright red ring          (box-shadow inset 1)
-  3. Dark maroon ring         (box-shadow inset 2)
-  4. Warm sandy content area  (background)
-*/
 .custom .options li {
   list-style: none !important;
   display: block !important;
@@ -94,18 +86,20 @@
   height: auto !important;
 
   position: relative;
-  background: #d4b070 !important;
-  color: #1a0800 !important;
+  /* Medium warm brown card body */
+  background: #8b5530 !important;
+  color: #f0dca0 !important;
   font-size: 8px;
   line-height: 1.7;
-  padding: 10px 60px 10px 54px !important;
-  margin: 6px 0 !important;
+  padding: 8px 58px 8px 52px !important;
+  margin: 7px 0 !important;
 
-  border: 4px solid #3a0e08 !important;
+  /* Bright green pixel border like the BEAK card */
+  border: 4px solid #4a9a2a !important;
   box-shadow:
-    inset 0 0 0 3px #c83020,
-    inset 0 0 0 5px #3a0e08,
-    0 3px 8px rgba(0,0,0,0.5);
+    inset 0 0 0 2px #6aba40,
+    inset 0 0 0 4px #3a7a18,
+    0 3px 8px rgba(0,0,0,0.35);
 
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -115,12 +109,12 @@
 .custom .options li::before {
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  width: 12px;
-  height: 12px;
-  background: radial-gradient(circle at 40% 40%, #f0d860, #b08010);
-  border: 1px solid #6a4808;
+  top: -3px;
+  left: -3px;
+  width: 10px;
+  height: 10px;
+  background: #d4a820;
+  border: 1px solid #8a6010;
   z-index: 3;
 }
 
@@ -128,29 +122,29 @@
 .custom .options li::after {
   content: '';
   position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 12px;
-  height: 12px;
-  background: radial-gradient(circle at 40% 40%, #f0d860, #b08010);
-  border: 1px solid #6a4808;
+  top: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  background: #d4a820;
+  border: 1px solid #8a6010;
   z-index: 3;
 }
 
-/* ─── Option number badge ─────────────────────────────────────────────── */
+/* ─── Option number badge — darker section like the portrait area ─────── */
 .custom .options li .number {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   width: 40px;
-  background: #3a0e08;
+  background: #6a3818;
   color: #f0d060;
   font-size: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 3px solid #c83020;
+  border-right: 3px solid #4a9a2a;
   text-shadow: 1px 1px 0 #000;
   z-index: 2;
 }
@@ -161,11 +155,11 @@
   top: 50%;
   right: 8px;
   transform: translateY(-50%);
-  background: #3a0e08;
+  background: #6a3818;
   color: #f0d060;
   font-size: 7px;
   padding: 4px 6px;
-  border: 2px solid #c83020;
+  border: 2px solid #4a9a2a;
   text-shadow: 1px 1px 0 #000;
   min-width: 36px;
   text-align: center;
@@ -175,24 +169,24 @@
 /* ─── Option text ─────────────────────────────────────────────────────── */
 .custom .options li .text {
   line-height: 1.7;
-  color: #1a0800 !important;
+  color: #f0dca0 !important;
 }
 
 /* ─── Progress bar ────────────────────────────────────────────────────── */
 .custom .options li .bar {
-  background: #1e0808;
+  background: #4a2810;
   height: 6px;
   margin-top: 8px;
-  border: 2px solid #3a0e08;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.6);
+  border: 2px solid #3a1808;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .custom .options li .bar .bar-inner {
-  background: linear-gradient(to right, #3a9a10, #80e830);
+  background: linear-gradient(to right, #3a9a10, #80e030);
   height: 100%;
   width: 0;
   transition: width 1s ease;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
 /* ─── Winner highlight ────────────────────────────────────────────────── */
@@ -205,25 +199,25 @@
 .custom.finished .options li.highest,
 .custom.removing .options li.highest {
   opacity: 1 !important;
-  background: #f0dfa0 !important;
-  border-color: #8a6010 !important;
+  background: #a07830 !important;
+  border-color: #d4a820 !important;
   box-shadow:
-    inset 0 0 0 3px #d4a820,
-    inset 0 0 0 5px #8a6010,
-    0 0 18px rgba(212,168,32,0.7) !important;
+    inset 0 0 0 2px #f0d060,
+    inset 0 0 0 4px #a07820,
+    0 0 18px rgba(212,168,32,0.6) !important;
 }
 
 .custom.finished .options li.highest .bar .bar-inner {
-  background: linear-gradient(to right, #d4a820, #fff080);
+  background: linear-gradient(to right, #d4a820, #fff060);
 }
 
 /* ─── Help bar ────────────────────────────────────────────────────────── */
 .custom .options li.help {
-  background: #3a0e08 !important;
+  background: #6a3818 !important;
   color: #f0d060 !important;
   text-align: center;
   font-size: 7px;
-  border: 3px solid #1e0808 !important;
+  border: 3px solid #4a9a2a !important;
   box-shadow: none !important;
   padding-left: 10px !important;
   padding-right: 10px !important;
@@ -233,12 +227,11 @@
   padding-bottom: 0 !important;
   margin: 0 !important;
   transition: height 0.4s, padding 0.4s;
-  border-radius: 0;
 }
 
 .custom .options li.help::before,
 .custom .options li.help::after {
-  display: none;
+  display: none !important;
 }
 
 .custom.active .options li.help {
@@ -260,9 +253,9 @@
 
 /* ─── Meta info ───────────────────────────────────────────────────────── */
 .custom .metaInfo {
-  background: #1e0808;
-  border: 3px solid #3a0e08;
-  box-shadow: inset 0 0 0 2px #5a1010;
+  background: #6a3818;
+  border: 3px solid #4a9a2a;
+  box-shadow: inset 0 0 0 2px #3a7a18;
   overflow: hidden;
   padding: 4px 6px;
   margin-top: 8px;
@@ -270,15 +263,15 @@
 
 .custom .total,
 .custom .duration {
-  background: #3a0e08;
-  color: #d4b070;
+  background: #8b5530;
+  color: #f0dca0;
   font-size: 7px;
   float: left;
   width: 48%;
   text-align: center;
   padding: 8px 4px;
   margin: 3px 0;
-  border: 2px solid #c83020;
+  border: 2px solid #4a9a2a;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -305,14 +298,14 @@
 .custom .credits {
   text-align: center;
   font-size: 6px;
-  color: #d4b070;
+  color: #f0dca0;
   height: 22px;
   line-height: 22px;
   clear: both;
   overflow: hidden;
   transition: all 0.8s;
-  background: #1e0808;
-  border-top: 2px solid #3a0e08;
+  background: #6a3818;
+  border-top: 2px solid #4a9a2a;
   letter-spacing: 0.5px;
 }
 

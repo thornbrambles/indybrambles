@@ -177,25 +177,30 @@
 /* ─── Inner content pane — LIGHT PARCHMENT like the game's text box ───── */
 .custom .options li .text {
   display: block;
-  background: #ead990 !important;  /* bright warm parchment */
+  background: #ead990 !important;
   color: #1a0e00 !important;
   line-height: 1.7;
-  padding: 7px 52px 7px 8px;       /* right padding makes room for procent */
+  /* right padding clears the % badge; bottom padding holds the bar */
+  padding: 7px 52px 20px 8px;
   border: 2px solid #b89040;
   box-shadow:
     inset 0 0 0 1px #f5e8a8,
     inset 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 0;
-  min-height: 28px;
+  min-height: 36px;
+  text-transform: none;            /* match game — not all-caps inside parchment */
 }
 
-/* ─── Progress bar — inside the parchment area ───────────────────────── */
+/* ─── Progress bar — inside the parchment box at the bottom ─────────── */
 .custom .options li .bar {
   background: #4a2808;
   height: 7px;
   border: 2px solid #7a4820;
-  margin-top: 6px;
+  /* pull it up so it sits inside the parchment bottom padding */
+  margin-top: -18px;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 1;
 }
 
 .custom .options li .bar .bar-inner {
@@ -231,17 +236,15 @@
   background: linear-gradient(to right, #d4a820, #fff060);
 }
 
-/* ─── Help bar — vote prompt, dark strip like card bottom ─────────────── */
+/* ─── Help bar — simple warm strip, no heavy card border ─────────────── */
 .custom .options li.help {
-  background: #5a2e10 !important;
-  color: #f0d060 !important;
+  background: #ead990 !important;
+  color: #5a2e10 !important;
   text-align: center;
   font-size: 7px;
   letter-spacing: 1px;
-  border: 4px solid #5aaa2a !important;
-  box-shadow:
-    inset 0 0 0 2px #78c838,
-    inset 0 0 0 4px #3a7a10 !important;
+  border: 2px solid #b89040 !important;
+  box-shadow: none !important;
   padding-left: 10px !important;
   padding-right: 10px !important;
   overflow: hidden !important;

@@ -14,12 +14,14 @@
   opacity: 0;
   transition: opacity 0.6s ease;
 
+
   background: #caa76d;
-  border: 5px solid #8a6820;
+  border: 8px solid #f5dfb1;
+  border-radius: 15px;
   box-shadow:
-    inset 0 0 0 2px #e8c870,
-    inset 0 0 0 4px #a87e30,
-    0 6px 20px rgba(0,0,0,0.5);
+    inset 0 0 0 4px #a9844d,
+    inset 0 0 0 4px #a9844d,
+    0 6px 20px #1d1608;
 }
 
 .custom.active,
@@ -48,7 +50,7 @@
 
   background: #b32a1b !important;
   color: #ffffff !important;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.6;
   padding: 10px 24px !important;
   white-space: normal;
@@ -101,43 +103,44 @@
   height: auto !important;
 
   position: relative;
-  background: #7a4520 !important;  /* dark brown outer shell */
-  color: #f0dca0 !important;
-  font-size: 8px;
+  background: #904e48 !important;  /* dark brown outer shell */
+  color: #904e48 !important;
+  font-size: 14px;
   line-height: 1.5;
   padding: 6px 6px 6px 56px !important;
   margin: 10px 0 !important;
 
-  border: 4px solid #5aaa2a !important;
-  box-shadow:
-    inset 0 0 0 2px #78c838,
-    inset 0 0 0 4px #3a7a10,
-    0 3px 8px rgba(0,0,0,0.35);
+  border: 6px solid #79a632;
+  border-radius: 8px;
 }
 
 /* Gold corner pip — top-left */
 .custom .options li::before {
+  display: none !important;
   content: '';
   position: absolute;
   top: -3px;
   left: -3px;
-  width: 11px;
-  height: 11px;
-  background: #d4a820;
-  border: 1px solid #8a6810;
+  width: 7px;
+  height: 7px;
+  background: #acd33e;
+  border: 2px solid #79a632;
+  border-radius: 5px;
   z-index: 3;
 }
 
 /* Gold corner pip — top-right */
 .custom .options li::after {
+  display: none !important;
   content: '';
   position: absolute;
   top: -3px;
   right: -3px;
-  width: 11px;
-  height: 11px;
-  background: #d4a820;
-  border: 1px solid #8a6810;
+  width: 7px;
+  height: 7px;
+  background: #acd33e;
+  border: 2px solid #79a632;
+  border-radius: 5px;
   z-index: 3;
 }
 
@@ -150,7 +153,7 @@
   width: 44px;
   background: #5a2e10;
   color: #f0d060;
-  font-size: 11px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,9 +169,10 @@
   right: 8px;
   background: #5a2e10;
   color: #f0d060;
-  font-size: 7px;
+  font-size: 10px;
   padding: 4px 6px;
   border: 2px solid #3a7a10;
+  border-radius: 8px;
   text-shadow: 1px 1px 0 #000;
   min-width: 40px;
   text-align: center;
@@ -181,6 +185,7 @@
 .custom .options li.help .text {
   background: transparent !important;
   border: none !important;
+  border-radius: 8px;
   box-shadow: none !important;
   padding: 0 !important;
   color: inherit !important;
@@ -189,15 +194,16 @@
 
 .custom .options li .text {
   display: block;
-  background: #ead990 !important;
+  background: #dbad6d !important;
   color: #1a0e00 !important;
   line-height: 1.7;
   /* right padding clears the % badge; bottom padding holds the bar */
   padding: 7px 52px 20px 8px;
-  border: 2px solid #b89040;
+  border: 2px solid #3a7a10;
   box-shadow:
-    inset 0 0 0 1px #f5e8a8,
+    inset 0 0 0 1px #79a632,
     inset 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
   margin-bottom: 0;
   min-height: 36px;
   text-transform: none;            /* match game — not all-caps inside parchment */
@@ -208,6 +214,7 @@
   background: #4a2808;
   height: 7px;
   border: 2px solid #7a4820;
+  border-radius: 8px;
   margin-top: -16px;   /* pull up into the parchment bottom padding */
   margin-left: 2px;
   margin-right: 2px;
@@ -235,6 +242,7 @@
 .custom.removing .options li.highest {
   opacity: 1 !important;
   border-color: #d4a820 !important;
+  border-radius: 8px;
   box-shadow:
     inset 0 0 0 2px #f0d060,
     inset 0 0 0 4px #a07820,
@@ -251,12 +259,13 @@
 
 /* ─── Help bar — simple warm strip, no heavy card border ─────────────── */
 .custom .options li.help {
-  background: #ead990 !important;
+  background: #dbad6d !important;
   color: #5a2e10 !important;
   text-align: center;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1px;
-  border: 2px solid #b89040 !important;
+  border: 2px solid #5a2e10 !important;
+  border-radius: 8px;
   box-shadow: none !important;
   padding-left: 10px !important;
   padding-right: 10px !important;
@@ -294,6 +303,7 @@
 .custom .metaInfo {
   background: #5a2e10;
   border: 4px solid #5aaa2a;
+  border-radius: 8px;
   box-shadow:
     inset 0 0 0 2px #78c838,
     inset 0 0 0 4px #3a7a10;
@@ -310,12 +320,13 @@
 .custom .duration {
   background: #7a4520;
   color: #dcc878;
-  font-size: 7px;
+  font-size: 10px;
   flex: 1;
   text-align: center;
   padding: 8px 4px;
   margin: 3px;
   border: 2px solid #3a7a10;
+  border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   float: none;
@@ -351,6 +362,7 @@
   transition: all 0.8s;
   background: #5a2e10;
   border-top: 2px solid #3a7a10;
+  border-radius: 8px;
   letter-spacing: 0.5px;
 }
 

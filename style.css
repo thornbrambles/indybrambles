@@ -1,27 +1,26 @@
 /*
   RPG Card Theme for poll.ma.pe
-  Inspired by pixel-art RPG ability/item card UI
-
-  Usage:
-    1. Host this file publicly (e.g. GitHub Pages)
-    2. In poll.ma.pe dashboard select "Custom" theme
-    3. Append ?customCss=https://YOUR_USERNAME.github.io/poll-mape-rpg-theme/style.css
-       to your overlay URL
-
+  Usage: ?customCss=https://thornbrambles.github.io/indybrambles/style.css
   Please keep the poll.ma.pe credit visible briefly.
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* ─── Reset / base ────────────────────────────────────────────────────── */
+/* ─── Outer container ─────────────────────────────────────────────────── */
 .custom {
   width: 420px;
-  padding: 0;
-  background: transparent;
+  padding: 8px;
   font-family: 'Press Start 2P', monospace;
   image-rendering: pixelated;
   opacity: 0;
   transition: opacity 0.6s ease;
+
+  /* Warm wooden outer frame */
+  background: #7a4a1e;
+  border: 6px solid #3d2008;
+  box-shadow:
+    inset 0 0 0 3px #b8722e,
+    0 6px 20px rgba(0,0,0,0.5);
 }
 
 .custom.active,
@@ -29,63 +28,49 @@
   opacity: 1;
 }
 
-/* ─── Outer wooden-panel shell ────────────────────────────────────────── */
+/* Optional .border div — same style so it doesn't break if present */
 .custom .border {
-  background: #5c2d0a;
-  border: 6px solid #3a1800;
-  border-radius: 4px;
-  box-shadow:
-    inset 0 0 0 3px #8b4a14,
-    inset 0 0 0 6px #5c2d0a,
-    0 6px 18px rgba(0,0,0,0.7);
-  padding: 6px;
-  overflow: hidden;
+  border: none;
+  background: transparent;
+  padding: 0;
 }
 
-/* ─── Question (top card) ─────────────────────────────────────────────── */
+/* ─── Question card ───────────────────────────────────────────────────── */
 .custom .options li.question {
-  background: #1a3a5c;
-  color: #f5e6c0;
+  list-style: none;
+  background: #2a4a70;
+  color: #f0e8cc;
   font-size: 9px;
-  line-height: 1.7;
+  line-height: 1.8;
   padding: 12px 16px;
   white-space: normal;
-  border: 4px solid #4a9eff;
-  box-shadow:
-    inset 0 0 0 2px #1a3a5c,
-    inset 0 0 8px rgba(74,158,255,0.2);
-  margin-bottom: 4px;
+  border: 4px solid #5aaaff;
+  margin: 0 0 6px 0;
   position: relative;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
-/* Corner pip decorations on the question */
-.custom .options li.question::before,
-.custom .options li.question::after {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: #4a9eff;
+/* ─── Answer option cards ─────────────────────────────────────────────── */
+.custom .options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.custom .options li.question::before { top: -2px; left: -2px; }
-.custom .options li.question::after  { bottom: -2px; right: -2px; }
 
-/* ─── Answer options (item cards) ─────────────────────────────────────── */
 .custom .options li {
+  list-style: none;
   position: relative;
-  background: #d4a86a;
-  color: #2a1400;
+  background: #e8c878;
+  color: #2a1200;
   font-size: 8px;
   line-height: 1.6;
-  padding: 10px 60px 10px 56px;
-  margin: 4px 0;
+  padding: 10px 58px 10px 52px;
+  margin: 5px 0;
   border: 4px solid #4a8c2a;
   box-shadow:
-    inset 0 0 0 2px #c49050,
-    inset 0 0 0 4px #8b5e20,
-    inset 0 -3px 0 rgba(0,0,0,0.25);
+    inset 0 0 0 2px #d4a84a,
+    inset 0 -3px 0 rgba(0,0,0,0.2);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -96,14 +81,14 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 40px;
+  width: 38px;
   background: #3a2000;
   color: #f5c842;
-  font-size: 8px;
+  font-size: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 3px solid #5c3a10;
+  border-right: 3px solid #6a4010;
   text-shadow: 1px 1px 0 #000;
 }
 
@@ -111,43 +96,40 @@
 .custom .options li .procent {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 8px;
   transform: translateY(-50%);
   background: #3a2000;
-  color: #e8a030;
+  color: #f5c842;
   font-size: 8px;
-  padding: 3px 5px;
-  border: 2px solid #5c3a10;
+  padding: 3px 6px;
+  border: 2px solid #6a4010;
   text-shadow: 1px 1px 0 #000;
-  min-width: 34px;
+  min-width: 32px;
   text-align: center;
+}
+
+/* ─── Option text ─────────────────────────────────────────────────────── */
+.custom .options li .text {
+  line-height: 1.6;
+  color: #2a1200;
 }
 
 /* ─── Progress bar ────────────────────────────────────────────────────── */
 .custom .options li .bar {
   background: #3a2000;
-  height: 6px;
-  margin-top: 6px;
-  border: 2px solid #5c3a10;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
+  height: 7px;
+  margin-top: 8px;
+  border: 2px solid #6a4010;
 }
 
 .custom .options li .bar .bar-inner {
-  background: linear-gradient(to right, #4aab2a, #7eff4a);
+  background: linear-gradient(to right, #3a9a1a, #70e040);
   height: 100%;
   width: 0;
   transition: width 1s ease;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
-/* ─── Text ────────────────────────────────────────────────────────────── */
-.custom .options li .text {
-  line-height: 1.6;
-  color: #2a1400;
-  text-shadow: 1px 1px 0 rgba(255,255,255,0.2);
-}
-
-/* ─── Highest vote winner ─────────────────────────────────────────────── */
+/* ─── Winner highlight ────────────────────────────────────────────────── */
 .custom.finished .options li,
 .custom.removing .options li {
   opacity: 0.35;
@@ -157,34 +139,36 @@
 .custom.finished .options li.highest,
 .custom.removing .options li.highest {
   opacity: 1;
-  background: #f5e6a0;
-  border-color: #f5c842;
+  background: #f8f0b0;
+  border-color: #e8c020;
   box-shadow:
-    inset 0 0 0 2px #e8d870,
-    inset 0 0 0 4px #c8a820,
-    0 0 12px rgba(245,200,66,0.6);
+    inset 0 0 0 2px #f0d840,
+    0 0 14px rgba(240,200,40,0.5);
 }
 
 .custom.finished .options li.highest .bar .bar-inner {
-  background: linear-gradient(to right, #f5c842, #fff8a0);
+  background: linear-gradient(to right, #e8c020, #fff080);
 }
 
 /* ─── Help bar (vote prompt) ──────────────────────────────────────────── */
 .custom .options li.help {
-  background: #3a1800;
+  background: #3a2000;
   color: #f5c842;
   text-align: center;
   font-size: 7px;
-  border-color: #8b4a14;
+  border-color: #6a4010;
+  padding-left: 10px;
+  padding-right: 10px;
   overflow: hidden;
   height: 0;
   padding-top: 0;
   padding-bottom: 0;
+  margin: 0;
   transition: height 0.4s, padding 0.4s;
 }
 
 .custom.active .options li.help {
-  height: 36px;
+  height: 34px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -196,33 +180,32 @@
 
 .custom .options li.help span {
   display: block;
-  padding: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* ─── Meta info panel (totals & timer) ───────────────────────────────── */
+/* ─── Meta info (totals & timer) ─────────────────────────────────────── */
 .custom .metaInfo {
-  background: #3a2000;
-  border: 4px solid #5c3a10;
+  background: #5a3510;
+  border: 3px solid #3d2008;
   overflow: hidden;
   padding: 4px 6px;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .custom .total,
 .custom .duration {
-  background: #2a1400;
-  color: #d4a86a;
+  background: #3a2000;
+  color: #e8c878;
   font-size: 7px;
   float: left;
   width: 48%;
   text-align: center;
   padding: 8px 4px;
-  margin: 4px 0;
-  border: 2px solid #5c3a10;
-  letter-spacing: 0.5px;
+  margin: 3px 0;
+  border: 2px solid #6a4010;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .custom .total {
@@ -232,10 +215,10 @@
 .custom .total strong,
 .custom .duration strong {
   color: #f5c842;
-  font-size: 11px;
+  font-size: 12px;
   display: block;
   margin-bottom: 4px;
-  text-shadow: 1px 1px 0 #000, 0 0 6px rgba(245,200,66,0.5);
+  text-shadow: 1px 1px 0 #000;
 }
 
 .custom.finished .metaInfo,
@@ -246,17 +229,15 @@
 /* ─── Credits ─────────────────────────────────────────────────────────── */
 .custom .credits {
   text-align: center;
-  font-family: 'Press Start 2P', monospace;
   font-size: 6px;
-  color: #d4a86a;
-  opacity: 1;
+  color: #e8c878;
   height: 22px;
   line-height: 22px;
   clear: both;
   overflow: hidden;
   transition: all 0.8s;
   background: #3a2000;
-  border-top: 2px solid #5c3a10;
+  border-top: 2px solid #6a4010;
   letter-spacing: 0.5px;
 }
 
@@ -265,19 +246,6 @@
   height: 0;
   opacity: 0;
 }
-
-/* ─── Pixel corner decoration on border ──────────────────────────────── */
-.custom .border::before,
-.custom .border::after {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #f5c842;
-  opacity: 0.7;
-}
-.custom .border::before { top: 0; left: 0; }
-.custom .border::after  { bottom: 0; right: 0; }
 
 /* ─── Positioning ─────────────────────────────────────────────────────── */
 .custom.topLeft     { top: 20px; left: 20px; }

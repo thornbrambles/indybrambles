@@ -176,6 +176,17 @@
 }
 
 /* ─── Inner content pane — LIGHT PARCHMENT like the game's text box ───── */
+/* Exclude question and help from getting parchment background */
+.custom .options li.question .text,
+.custom .options li.help .text {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  color: inherit !important;
+  min-height: 0 !important;
+}
+
 .custom .options li .text {
   display: block;
   background: #ead990 !important;
@@ -197,8 +208,9 @@
   background: #4a2808;
   height: 7px;
   border: 2px solid #7a4820;
-  /* pull it up so it sits inside the parchment bottom padding */
-  margin-top: -18px;
+  margin-top: -16px;   /* pull up into the parchment bottom padding */
+  margin-left: 2px;
+  margin-right: 2px;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
   position: relative;
   z-index: 1;
@@ -290,23 +302,27 @@
   margin-top: 10px;
 }
 
+.custom .metaInfo {
+  display: flex !important;
+}
+
 .custom .total,
 .custom .duration {
   background: #7a4520;
   color: #dcc878;
   font-size: 7px;
-  float: left;
-  width: 48%;
+  flex: 1;
   text-align: center;
   padding: 8px 4px;
-  margin: 3px 0;
+  margin: 3px;
   border: 2px solid #3a7a10;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  float: none;
 }
 
 .custom .total {
-  margin-right: 4%;
+  margin-right: 3px;
 }
 
 .custom .total strong,

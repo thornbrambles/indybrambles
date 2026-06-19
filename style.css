@@ -5,7 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* ─── Outer panel — warm tan like the game's card panel background ────── */
+/* ─── Outer panel — warm tan like the game's card panel ──────────────── */
 .custom {
   width: 420px;
   padding: 10px;
@@ -15,10 +15,10 @@
   transition: opacity 0.6s ease;
 
   background: #c8a860;
-  border: 5px solid #8a6020;
+  border: 5px solid #8a6820;
   box-shadow:
-    inset 0 0 0 3px #e0c070,
-    inset 0 0 0 5px #a87e30,
+    inset 0 0 0 2px #e8c870,
+    inset 0 0 0 4px #a87e30,
     0 6px 20px rgba(0,0,0,0.5);
 }
 
@@ -46,7 +46,7 @@
   visibility: visible !important;
   opacity: 1 !important;
 
-  background: linear-gradient(180deg, #d85020 0%, #a83010 100%) !important;
+  background: linear-gradient(180deg, #d85020 0%, #a02810 100%) !important;
   color: #f5e8b0 !important;
   font-size: 10px;
   line-height: 1.6;
@@ -55,7 +55,7 @@
   border: 3px solid #6a1808 !important;
   border-radius: 8px;
   box-shadow:
-    inset 0 2px 0 rgba(255,200,100,0.25),
+    inset 0 2px 0 rgba(255,200,100,0.2),
     inset 0 -2px 0 rgba(0,0,0,0.3),
     0 3px 8px rgba(0,0,0,0.4);
   margin: 0 0 10px 0 !important;
@@ -63,6 +63,12 @@
   letter-spacing: 2px;
   text-align: center;
   text-shadow: 1px 2px 0 #5a1000;
+}
+
+/* No corner pips on question */
+.custom .options li.question::before,
+.custom .options li.question::after {
+  display: none !important;
 }
 
 /* ─── Option list ─────────────────────────────────────────────────────── */
@@ -78,6 +84,13 @@
 }
 
 /* ─── Each answer card ────────────────────────────────────────────────── */
+/*
+  Structure matching the game:
+  - Green border (4px)
+  - Dark brown outer card shell (background)
+  - Light parchment inner content box (on .text)
+  - Dark left column for number (like portrait area)
+*/
 .custom .options li {
   list-style: none !important;
   display: block !important;
@@ -87,23 +100,19 @@
   height: auto !important;
 
   position: relative;
-  /* Dark brown outer card shell */
-  background: #6a3818 !important;
+  background: #7a4520 !important;  /* dark brown outer shell */
   color: #f0dca0 !important;
   font-size: 8px;
-  line-height: 1.7;
-  padding: 8px 62px 8px 56px !important;
+  line-height: 1.5;
+  /* padding-left makes room for number badge; right for procent */
+  padding: 8px 70px 8px 56px !important;
   margin: 10px 0 !important;
 
-  /* Bright green pixel border like the BEAK card */
-  border: 4px solid #4a9a2a !important;
+  border: 4px solid #5aaa2a !important;
   box-shadow:
-    inset 0 0 0 2px #6aba40,
-    inset 0 0 0 4px #3a7a18,
+    inset 0 0 0 2px #78c838,
+    inset 0 0 0 4px #3a7a10,
     0 3px 8px rgba(0,0,0,0.35);
-
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 /* Gold corner pip — top-left */
@@ -112,10 +121,10 @@
   position: absolute;
   top: -3px;
   left: -3px;
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   background: #d4a820;
-  border: 1px solid #8a6010;
+  border: 1px solid #8a6810;
   z-index: 3;
 }
 
@@ -125,65 +134,65 @@
   position: absolute;
   top: -3px;
   right: -3px;
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   background: #d4a820;
-  border: 1px solid #8a6010;
+  border: 1px solid #8a6810;
   z-index: 3;
 }
 
-/* ─── Option number badge — darker section like the portrait area ─────── */
+/* ─── Number badge — dark portrait-style left column ─────────────────── */
 .custom .options li .number {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 40px;
-  background: #6a3818;
+  width: 44px;
+  background: #5a2e10;
   color: #f0d060;
-  font-size: 10px;
+  font-size: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 3px solid #4a9a2a;
+  border-right: 3px solid #3a7a10;
   text-shadow: 1px 1px 0 #000;
   z-index: 2;
 }
 
-/* ─── Vote percentage ─────────────────────────────────────────────────── */
+/* ─── Percentage badge ────────────────────────────────────────────────── */
 .custom .options li .procent {
   position: absolute;
-  top: 50%;
+  top: 8px;
   right: 8px;
-  transform: translateY(-50%);
-  background: #6a3818;
+  background: #5a2e10;
   color: #f0d060;
   font-size: 7px;
   padding: 4px 6px;
-  border: 2px solid #4a9a2a;
+  border: 2px solid #3a7a10;
   text-shadow: 1px 1px 0 #000;
-  min-width: 36px;
+  min-width: 38px;
   text-align: center;
   z-index: 2;
 }
 
-/* ─── Inner text content pane — lighter inset box like the game ──────── */
+/* ─── Inner content pane — LIGHT PARCHMENT like the game's text box ───── */
 .custom .options li .text {
   display: block;
-  background: #9a6a3a;
-  color: #f5e8b0 !important;
-  line-height: 1.7;
+  background: #dcc878;           /* warm light parchment */
+  color: #1a0e00 !important;     /* dark text on light bg */
+  line-height: 1.6;
   padding: 6px 8px;
-  border: 2px solid #7a4a20;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+  border: 2px solid #a88030;
+  box-shadow:
+    inset 0 1px 3px rgba(0,0,0,0.15),
+    inset 0 0 0 1px #e8d890;
   margin-bottom: 6px;
 }
 
-/* ─── Progress bar ────────────────────────────────────────────────────── */
+/* ─── Progress bar — sits below the parchment box ────────────────────── */
 .custom .options li .bar {
   background: #3a1e08;
   height: 7px;
-  margin-top: 4px;
   border: 2px solid #5a3010;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
 }
@@ -206,7 +215,6 @@
 .custom.finished .options li.highest,
 .custom.removing .options li.highest {
   opacity: 1 !important;
-  background: #a07830 !important;
   border-color: #d4a820 !important;
   box-shadow:
     inset 0 0 0 2px #f0d060,
@@ -214,21 +222,25 @@
     0 0 18px rgba(212,168,32,0.6) !important;
 }
 
+.custom.finished .options li.highest .text {
+  background: #f5eca0 !important;
+}
+
 .custom.finished .options li.highest .bar .bar-inner {
   background: linear-gradient(to right, #d4a820, #fff060);
 }
 
-/* ─── Help bar — vote prompt strip ───────────────────────────────────── */
+/* ─── Help bar — vote prompt, dark strip like card bottom ─────────────── */
 .custom .options li.help {
-  background: #8b5530 !important;
+  background: #5a2e10 !important;
   color: #f0d060 !important;
   text-align: center;
   font-size: 7px;
   letter-spacing: 1px;
-  border: 3px solid #4a9a2a !important;
+  border: 4px solid #5aaa2a !important;
   box-shadow:
-    inset 0 0 0 2px #6aba40,
-    inset 0 0 0 4px #3a7a18 !important;
+    inset 0 0 0 2px #78c838,
+    inset 0 0 0 4px #3a7a10 !important;
   padding-left: 10px !important;
   padding-right: 10px !important;
   overflow: hidden !important;
@@ -263,25 +275,27 @@
 
 /* ─── Meta info ───────────────────────────────────────────────────────── */
 .custom .metaInfo {
-  background: #6a3818;
-  border: 3px solid #4a9a2a;
-  box-shadow: inset 0 0 0 2px #3a7a18;
+  background: #5a2e10;
+  border: 4px solid #5aaa2a;
+  box-shadow:
+    inset 0 0 0 2px #78c838,
+    inset 0 0 0 4px #3a7a10;
   overflow: hidden;
   padding: 4px 6px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .custom .total,
 .custom .duration {
-  background: #8b5530;
-  color: #f0dca0;
+  background: #7a4520;
+  color: #dcc878;
   font-size: 7px;
   float: left;
   width: 48%;
   text-align: center;
   padding: 8px 4px;
   margin: 3px 0;
-  border: 2px solid #4a9a2a;
+  border: 2px solid #3a7a10;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -308,14 +322,14 @@
 .custom .credits {
   text-align: center;
   font-size: 6px;
-  color: #f0dca0;
+  color: #dcc878;
   height: 22px;
   line-height: 22px;
   clear: both;
   overflow: hidden;
   transition: all 0.8s;
-  background: #6a3818;
-  border-top: 2px solid #4a9a2a;
+  background: #5a2e10;
+  border-top: 2px solid #3a7a10;
   letter-spacing: 0.5px;
 }
 
